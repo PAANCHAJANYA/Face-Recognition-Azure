@@ -12,8 +12,8 @@ from PIL import Image, ImageDraw
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
-KEY = "3ec64d13489b49b9a4cf8ac796471f6b"
-ENDPOINT = "https://face-recognition-azure.cognitiveservices.azure.com/"
+KEY = "<FACE_API_KEY>"
+ENDPOINT = "<FACE_API_ENDPOINT>"
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 PERSON_GROUP_ID = 'friends'
 face_client.person_group.delete(person_group_id=PERSON_GROUP_ID)
