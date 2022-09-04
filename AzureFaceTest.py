@@ -11,7 +11,8 @@ from io import BytesIO
 from PIL import Image, ImageDraw
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
-from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
+from azure.cognitiveservices.vision.face.models import TrainingStatusType
+from azure.cognitiveservices.vision.face.models import Person
 KEY = "<FACE_API_KEY>"
 ENDPOINT = "FACE_API_ENDPOINT>"
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
@@ -32,7 +33,7 @@ for person in results:
         if(person.candidates[0].person_id=='98e96b2a-217c-4d68-b45b-ec3baf7f2219'):
             recognisedname = 'Karthik Sajjan'
         elif(person.candidates[0].person_id=='e7c9a74a-1152-438f-9575-e2cb84aa6f23'):
-            recognisedname = 'Deepak Chowdary'
+            recognisedname = 'Karusala Deepak Chowdary'
         else:
             recognisedname = 'Krishna Paanchajanya'
         print('{} is identified with a confidence of {}.'.format(recognisedname, person.candidates[0].confidence))
